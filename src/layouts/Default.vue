@@ -5,8 +5,8 @@
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
       </strong>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
+        <g-link class="nav__link" exact to="/">Home</g-link>
+        <g-link class="nav__link" exact to="/about/">About</g-link>
         <g-link class="nav__link" to="/products/">Products</g-link>
         <g-link class="nav__link" to="/new-products/">New products</g-link>
         <g-link class="nav__link" to="/new/product/">New product</g-link>
@@ -14,6 +14,7 @@
       </nav>
     </header>
     <slot/>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -24,6 +25,15 @@ query {
   }
 }
 </static-query>
+<script>
+import Footer from "../components/Footer";
+
+export default {
+  components: {
+    Footer
+  }
+}
+</script>
 
 <style>
 body {
@@ -50,5 +60,8 @@ body {
 
 .nav__link {
   margin-left: 20px;
+}
+.active {
+  color: red;
 }
 </style>

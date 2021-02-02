@@ -10,6 +10,9 @@
 import Layout from '../layouts/Default'
 
 export default {
+  metaInfo: {
+    title: "Products"
+  },
   components: {
     Layout
   }
